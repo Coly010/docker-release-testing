@@ -7,6 +7,13 @@
   },
   "nx": {
     "name": "api",
+    "release": {
+      "version": {
+        "versionActionsOptions": {
+          "repositoryName": "columferrynx/dockerreleaseapi"
+        }
+      }
+    },
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",
@@ -63,6 +70,11 @@
           "production": {
             "buildTarget": "@docker/api:build:production"
           }
+        }
+      },
+      "nx-release-publish": {
+        "options": {
+          "repositoryName": "columferrynx/dockerreleaseapi"
         }
       }
     }

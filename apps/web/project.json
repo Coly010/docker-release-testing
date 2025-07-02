@@ -5,6 +5,13 @@
   "prefix": "app",
   "sourceRoot": "apps/web/src",
   "tags": [],
+  "release": {
+    "version": {
+      "versionActionsOptions": {
+        "repositoryName": "columferrynx/dockerreleaseweb"
+      }
+    }
+  },
   "targets": {
     "build": {
       "executor": "@angular/build:application",
@@ -75,6 +82,11 @@
         "buildTarget": "web:build",
         "staticFilePath": "dist/apps/web/browser",
         "spa": true
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "repositoryName": "columferrynx/dockerreleaseweb"
       }
     }
   }

@@ -9,6 +9,36 @@
     ],
     "sharedGlobals": []
   },
+  "release": {
+    "groups": {
+      "apps": {
+        "projects": ["api", "web"],
+        "projectsRelationship": "independent",
+        "releaseTagPattern": "release/{projectName}/{version}",
+        "version": {
+          "groupPreVersionCommand": "pnpm nx run-many -t docker:build -p api,web",
+          "versionActions": "@org/docker/release/version-actions",
+          "versionActionsOptions": {
+            "versionPattern": "{currentDate|YYMM.DD}.{shortCommitSha}"
+          }
+        },
+        "changelog": {
+          "projectChangelogs": true
+        }
+      },
+      "packages": {
+        "projects": ["shared-utils"],
+        "projectsRelationship": "independent",
+        "releaseTagPattern": "release/{projectName}/{version}",
+        "version": {
+          "groupPreVersionCommand": "pnpm nx run-many -t build -p shared-utils",
+        },
+        "changelog": {
+          "projectChangelogs": true
+        }
+      }
+    }
+  },
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
