@@ -142,7 +142,11 @@ importers:
         specifier: ^6.0.5
         version: 6.1.5(encoding@0.1.13)(typanion@3.14.0)
 
-  apps/api: {}
+  apps/api:
+    dependencies:
+      '@org/shared-utils':
+        specifier: workspace:*
+        version: link:../../packages/shared-utils
 
   packages/shared-utils:
     dependencies:

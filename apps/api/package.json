@@ -2,6 +2,9 @@
   "name": "@docker/api",
   "version": "0.0.1",
   "private": true,
+  "dependencies": {
+    "@org/shared-utils": "workspace:*"
+  },
   "nx": {
     "name": "api",
     "targets": {
