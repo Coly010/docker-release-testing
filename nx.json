@@ -23,6 +23,13 @@
           "watchDepsName": "watch-deps"
         }
       }
+    },
+    {
+      "plugin": "@org/docker",
+      "options": {
+        "buildTarget": "docker:build",
+        "runTarget": "docker:run"
+      }
     }
   ],
   "targetDefaults": {

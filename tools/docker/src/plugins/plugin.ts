@@ -148,7 +148,7 @@ async function createDockerTargets(
   };
 
   targets['nx-release-publish'] = {
-    executor: '@nx/docker:release-publish',
+    executor: '@org/docker:release-publish',
   };
 
   return { targets, metadata: {} };
