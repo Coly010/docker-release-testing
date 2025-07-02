@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./tools/docker"
+    },
+    {
+      "path": "./packages/shared-utils"
+    },
+    {
+      "path": "./apps/api"
     }
   ]
 }
