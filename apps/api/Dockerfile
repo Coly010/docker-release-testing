@@ -12,9 +12,9 @@ ENV PORT=3000
 WORKDIR /app
 
 COPY dist api/dist
-COPY package.json api/
+COPY dist/package.json api/
 
-RUN npm config set registry http://host.docker.internal:4873
+
 RUN npm --prefix api --omit=dev -f install
 
 EXPOSE 3000

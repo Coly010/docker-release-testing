@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@org/shared-utils": "0.0.1"
+    "@org/shared-utils": "file:../../packages/shared-utils"
   },
   "nx": {
     "name": "api",
@@ -15,6 +15,23 @@
       }
     },
     "targets": {
+      "copy-workspace-modules": {
+        "dependsOn": ["build", "^build"],
+        "executor": "@nx/js:copy-workspace-modules",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "prune-lockfile": {
+        "dependsOn": ["copy-workspace-modules"],
+        "executor": "@nx/js:prune-lockfile",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "docker:build": {
+        "dependsOn": ["prune-lockfile"]
+      },
       "build": {
         "executor": "@nx/esbuild:esbuild",
         "outputs": [
