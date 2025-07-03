@@ -3,6 +3,8 @@
 ## Quick Start
 1. Run `pnpm i`
 2. Run `pnpm nx run-many -t build --parallel=4`
+3. Run `pnpm nx local-registry`
+4. Run `pnpm nx release --projects shared-utils --first-release` Use Custom Exact Version: `0.0.1`
 
 ## Release Findings
 Running `pnpm nx release` currently only finds the JS Package to release and not the applications

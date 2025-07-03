@@ -10,6 +10,12 @@
     "sharedGlobals": []
   },
   "release": {
+    "version": {
+      "versionActionsOptions": {
+        "installIgnoreScripts": true,
+        "skipLockFileUpdate": true
+      }
+    },
     "groups": {
       "apps": {
         "projects": ["api", "web"],
@@ -86,11 +92,9 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.mjs"
       ]
-    }
-  },
-  "release": {
-    "version": {
-      "preVersionCommand": "pnpm dlx nx run-many -t build"
+    },
+    "docker:build": {
+      "dependsOn": ["build", "^build"]
     }
   },
   "generators": {

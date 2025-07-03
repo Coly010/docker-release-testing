@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@org/shared-utils": "workspace:*"
+    "@org/shared-utils": "0.0.1"
   },
   "nx": {
     "name": "api",

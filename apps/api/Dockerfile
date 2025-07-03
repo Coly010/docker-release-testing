@@ -14,8 +14,7 @@ WORKDIR /app
 COPY dist api/dist
 COPY package.json api/
 
-# You can remove this install step if you build with `--bundle` option.
-# The bundled output will include external dependencies.
+RUN npm config set registry http://host.docker.internal:4873
 RUN npm --prefix api --omit=dev -f install
 
 EXPOSE 3000
